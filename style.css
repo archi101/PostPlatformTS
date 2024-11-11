@@ -1,0 +1,173 @@
+body {
+  background-image: url(https://images.alphacoders.com/102/1026345.jpg);
+  background-size: cover;
+  background-attachment: fixed;
+  display: flex;
+  justify-content: center;
+  align-items: flex-start;
+  min-height: 100vh;
+  margin: 0;
+  font-family: Arial, sans-serif;
+}
+
+#buttons {
+  display: flex;
+  gap: 10px;
+  flex-direction: row;
+  margin-bottom: 20px;
+}
+
+#container {
+  margin-top: 20px;
+  text-align: center;
+  width: 50%;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+#addPostButton, #refreshButton, #togglePostsButton {
+  padding: 10px 20px;
+  font-size: 18px;
+  cursor: pointer;
+  background-color: #6a00ff;
+  color: white;
+  border: none;
+  border-radius: 5px;
+  transition: background-color 0.3s ease;
+}
+
+#addPostButton:hover, #refreshButton:hover {
+  background-color: #5500cc;
+}
+
+#togglePostsButton {
+  background-color: #6a00ff;
+}
+
+#togglePostsButton.showing-deleted {
+  background-color: #ff4444;
+}
+
+#togglePostsButton.showing-deleted:hover {
+  background-color: #cc3333;
+}
+
+#postContainer, #deletedPostContainer {
+  width: 100%;
+}
+
+.post {
+  width: calc(100% - 22px);
+  margin-top: 15px;
+  margin-bottom: 15px;
+  padding: 10px;
+  border: 1px solid #ccc;
+  border-radius: 5px;
+  background-color: rgba(249, 249, 249, 0.9);
+  box-shadow: 10px 10px grey;
+  transition: transform 0.2s ease;
+}
+
+.post:hover {
+  transform: translateY(-2px);
+}
+
+.deleted-post {
+  background-color: rgba(255, 235, 238, 0.9);
+  border: 1px solid #ffcdd2;
+}
+
+.title {
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  padding: 5px;
+}
+
+.titleText {
+  text-align: left;
+  font-weight: bold;
+  font-size: 20px;
+  flex-grow: 1;
+}
+
+.crossIcon {
+  width: 24px;
+  height: 24px;
+  cursor: pointer;
+  transition: transform 0.2s ease;
+}
+
+.crossIcon:hover {
+  transform: scale(1.1);
+}
+
+.body {
+  text-align: left;
+  margin-top: 10px;
+  font-size: 16px;
+  padding: 5px;
+  line-height: 1.4;
+}
+
+.visible {
+  display: block;
+}
+
+.hidden {
+  display: none;
+}
+
+.modal {
+  display: none;
+  position: fixed;
+  z-index: 1;
+  left: 0;
+  top: 0;
+  width: 100%;
+  height: 100%;
+  background-color: rgba(0, 0, 0, 0.5);
+  backdrop-filter: blur(5px);
+}
+
+.modal-content {
+  text-align: center;
+  background-color: #e0cbe6;
+  border-radius: 10px;
+  margin: 15% auto;
+  padding: 20px;
+  border: 1px solid #888;
+  width: 300px;
+  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+}
+
+.modalButtons {
+  background-color: #b9a4d6;
+  margin: 5px;
+  padding: 10px 20px;
+  border: none;
+  color: white;
+  border-radius: 5px;
+  cursor: pointer;
+  transition: background-color 0.3s ease;
+}
+
+.modalButtons:hover {
+  background-color: #7a55ae;
+}
+
+@media (max-width: 768px) {
+  #container {
+      width: 90%;
+  }
+
+  #buttons {
+      flex-direction: column;
+  }
+
+  .post {
+      width: calc(100% - 20px);
+      margin: 10px 0;
+  }
+}
